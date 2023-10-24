@@ -49,6 +49,16 @@
 
 </form>
 
+<%
+String men=(String)request.getAttribute("mensaje");
+String menreg="";
+//aplicamos condicion
+if(men != null)  menreg=men;
+%>
+<h2 align="center" style="color:blue;">
+<%=menreg%>
+</h2>
+
 <!-- ----------------------------------------------------------------------------------------- -->
 
 <h1 align="center">Listado de Autos</h1>

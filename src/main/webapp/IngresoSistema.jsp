@@ -10,7 +10,7 @@
 
 <h1 align="center">Ingreso al sistema</h1>
 
-<form action="ControladorUsuario" method="post">
+<form action="ControladorUsuarios" method="post">
 
 <table align="center">
 

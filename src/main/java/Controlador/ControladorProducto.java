@@ -45,6 +45,7 @@ public class ControladorProducto extends HttpServlet {
 		double precioven = Double.parseDouble(request.getParameter("precioven"));
 		String estado = request.getParameter("estado");
 		String descrip = request.getParameter("descrip");
+		String mensaje = "";
 		
 		TblProductocl2 prodcl2 = new TblProductocl2();
 		ClassCrudProductoImp crud = new ClassCrudProductoImp();
@@ -56,6 +57,9 @@ public class ControladorProducto extends HttpServlet {
 		prodcl2.setDescripcl2(descrip);
 		
 		crud.RegistrarProducto(prodcl2);
+		
+		mensaje = "Datos ingresados Correctamente en la BD";
+		request.setAttribute("mensaje", mensaje);
 		
 		List<TblProductocl2> listaprod = crud.Listaproducto();
 		

@@ -13,36 +13,25 @@ import javax.servlet.http.HttpServletResponse;
 
 import modelo.TblUsuariocl2;
 
-
-
 /**
- * Servlet implementation class ControladorUsuario
+ * Servlet implementation class ControladorUsuarios
  */
-public class ControladorUsuario extends HttpServlet {
+public class ControladorUsuarios extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ControladorUsuario() {
+    public ControladorUsuarios() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//doGet(request, response);
 		
 		String usuario = request.getParameter("usuario");
 		String password = request.getParameter("password");
@@ -64,11 +53,29 @@ public class ControladorUsuario extends HttpServlet {
 	    }
 		
 		if(u != null){
-			System.out.println("Datos ingresaod correctamente");
+			System.out.println("Datos ingresado correctamente");
 			request.getRequestDispatcher("RegistrarProducto.jsp").forward(request, response);
 		}else{
 			System.out.println("Datos ingresados incorrectamente");
 			request.getRequestDispatcher("IngresoSistema.jsp").forward(request, response);
 		}	
+		
+	}//fin del service
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
 }
