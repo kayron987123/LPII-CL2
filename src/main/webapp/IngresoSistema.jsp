@@ -6,9 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ingreso al Sistema</title>
 </head>
-<body>
+<body bgcolor="#c5dec9">
 
-<h1>Ingreso al sistema</h1>
+<h1 align="center">Ingreso al sistema</h1>
 
 <form action="ControladorUsuario" method="post">
 

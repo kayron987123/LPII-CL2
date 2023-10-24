@@ -64,8 +64,10 @@ public class ControladorUsuario extends HttpServlet {
 	    }
 		
 		if(u != null){
+			System.out.println("Datos ingresaod correctamente");
 			request.getRequestDispatcher("RegistrarProducto.jsp").forward(request, response);
 		}else{
+			System.out.println("Datos ingresados incorrectamente");
 			request.getRequestDispatcher("IngresoSistema.jsp").forward(request, response);
 		}	
 	}
